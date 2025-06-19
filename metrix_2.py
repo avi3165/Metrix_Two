@@ -26,3 +26,12 @@
 #             break
 #     if x==0:
 #         print(num, 'not in All',b_i)
+#q4
+main_list=[]
+tmp_list = []
+for i in range(1,101):
+    tmp_list.append(i)
+    if i%10==0:
+        main_list.append(tmp_list)
+        tmp_list=[]
+print(main_list)
