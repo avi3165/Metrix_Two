@@ -106,33 +106,61 @@
 # #ג
 # print("The sum of the matrix frame is",frame)
 #q8
+# matrix=[[1,2,3,4,5],
+#         [6,7,8,9,10],
+#         [11,12,13,14,15],
+#         [16,17,18,19,20],
+#         [21,22,23,24,25]]
+# maximum=matrix[0]
+# max_index=0
+# minimum=matrix[0]
+# min_index=0
+# #א
+# for i,v in enumerate(matrix):
+#     if sum(v)>sum(maximum):
+#         maximum=v
+#         max_index=i
+#     elif sum(v)<sum(minimum):
+#         minimum=v
+#         min_index=i
+# print("The index with the max value is",max_index)
+# #ב
+# print("The index with the min value is",min_index)
+# # ג
+# new_matrix=[]
+# for a in range(len(matrix)):
+#     new_matrix.append([])
+# for i,v in enumerate(matrix):
+#     for j in range(1,len(matrix)+1):
+#         new_matrix[i].append(matrix[-j][i])
+# print(matrix)
+# for i in range(len(new_matrix)):
+#     print(new_matrix[i])
+#q7*
+#עשינו את הקוד כך שיתאים לכל אורך מטריצה
 matrix=[[1,2,3,4,5],
         [6,7,8,9,10],
         [11,12,13,14,15],
         [16,17,18,19,20],
         [21,22,23,24,25]]
-maximum=matrix[0]
-max_index=0
-minimum=matrix[0]
-min_index=0
-#א
+num=int(input("Please enter a number: "))
 for i,v in enumerate(matrix):
-    if sum(v)>sum(maximum):
-        maximum=v
-        max_index=i
-    elif sum(v)<sum(minimum):
-        minimum=v
-        min_index=i
-print("The index with the max value is",max_index)
-#ב
-print("The index with the min value is",min_index)
-# ג
-new_matrix=[]
-for a in range(len(matrix)):
-    new_matrix.append([])
-for i,v in enumerate(matrix):
-    for j in range(1,len(matrix)+1):
-        new_matrix[i].append(matrix[-j][i])
-print(matrix)
-for i in range(len(new_matrix)):
-    print(new_matrix[i])
+    for a,b in enumerate(v):
+        if num==b and a!=0 and a!=len(matrix)-1:
+            if i!=0:
+                print(matrix[i-1][a-1],matrix[i-1][a],matrix[i-1][a+1])
+            print(matrix[i][a- 1],"  ", matrix[i][a+1])
+            if i!=len(matrix)-1:
+                print(matrix[i+1][a- 1], matrix[i+1][a], matrix[i+1][a+ 1])
+        elif num==b and a!=0:
+            if i!=0:
+                print(matrix[i-1][a-1],matrix[i-1][a])
+            print(matrix[i][a- 1],"  ")
+            if i!=len(matrix)-1:
+                print(matrix[i+1][a- 1], matrix[i+1][a])
+        elif num==b and a!=len(matrix)-1:
+            if i!=0:
+                print(matrix[i-1][a],matrix[i-1][a+1])
+            print("  ", matrix[i][a+1])
+            if i!=len(matrix)-1:
+                print( matrix[i+1][a], matrix[i+1][a+ 1])
