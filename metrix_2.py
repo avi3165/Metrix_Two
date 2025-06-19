@@ -46,31 +46,62 @@
 #         tmp_list=[]
 # print(main_list)
 #q6
-# א
-metrix=[[1,2,3,5],[12,13,14,15],[11,12,19,61],[18,61,12,22]]
-list_7=[]
-list_6=[]
-list_8=[]
-dict_1={}
-the_most_number=0
-num=0
-for i,x in enumerate(metrix):
-    for a,b in enumerate(x):
-        list_7.append(b)
-        if b not in dict_1.keys():
-            dict_1[b]=1
-        elif b in dict_1.keys():
-            dict_1[b]+=1
-        if a%2==0:
-            list_6.append(b)
-    list_8.append(list_6)
-    list_6=[]
-print(list_8)
+# א#
+# metrix=[[1,2,3,5],[12,13,14,15],[11,12,19,61],[18,61,12,22]]
+# list_7=[]
+# list_6=[]
+# list_8=[]
+# dict_1={}
+# the_most_number=0
+# num=0
+# for i,x in enumerate(metrix):
+#     for a,b in enumerate(x):
+#         list_7.append(b)
+#         if b not in dict_1.keys():
+#             dict_1[b]=1
+#         elif b in dict_1.keys():
+#             dict_1[b]+=1
+#         if a%2==0:
+#             list_6.append(b)
+#     list_8.append(list_6)
+#     list_6=[]
+# print(list_8)
+# #ב
+# print(sum(list_7))
+# #ג
+# for k,v in dict_1.items():
+#     if v>the_most_number:
+#         the_most_number=v
+#         num=k
+# print (num,"is the number that we have the most",the_most_number)
+#q7
+metrix=[[1,2,3,4,5],
+        [6,7,8,9,10],
+        [11,12,13,14,15],
+        [16,17,18,19,20],
+        [21,22,23,24,25]]
+a=1
+#א
+first_slant,second_slant=[],[]
+first_column,last_column=[],[]
+frame=0
+
+for i,v in enumerate(metrix):
+    first_slant.append(v[i])
+    second_slant.append(v[-a])
+    a+=1
+    first_column.append(v[0])
+    last_column.append(v[-1])
+    if i==0:
+        frame+=sum(v)
+    elif i==len(metrix)-1:
+        frame+=sum(v)
+    else:
+        frame+=v[0]+v[-1]
+print("The sum of the first slant is",sum(first_slant))
+print("The sum of the second slant is",sum(second_slant))
 #ב
-print(sum(list_7))
+print("The sum of the first column is",sum(first_column))
+print("The sum of the last column is",sum(last_column))
 #ג
-for k,v in dict_1.items():
-    if v>the_most_number:
-        the_most_number=v
-        num=k
-print (num,"is the number that we have the most",the_most_number)
+print("The sum of the matrix frame is",frame)
