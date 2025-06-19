@@ -27,11 +27,21 @@
 #     if x==0:
 #         print(num, 'not in All',b_i)
 #q4
+# main_list=[]
+# tmp_list = []
+# for i in range(1,101):
+#     tmp_list.append(i)
+#     if i%10==0:
+#         main_list.append(tmp_list)
+#         tmp_list=[]
+# print(main_list)
+#q5
+num=int(input("Please enter a number: "))
 main_list=[]
 tmp_list = []
-for i in range(1,101):
+for i in range(1,num*num+1):
     tmp_list.append(i)
-    if i%10==0:
+    if i%num==0:
         main_list.append(tmp_list)
         tmp_list=[]
 print(main_list)
