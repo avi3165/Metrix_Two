@@ -36,12 +36,41 @@
 #         tmp_list=[]
 # print(main_list)
 #q5
-num=int(input("Please enter a number: "))
-main_list=[]
-tmp_list = []
-for i in range(1,num*num+1):
-    tmp_list.append(i)
-    if i%num==0:
-        main_list.append(tmp_list)
-        tmp_list=[]
-print(main_list)
+# num=int(input("Please enter a number: "))
+# main_list=[]
+# tmp_list = []
+# for i in range(1,num*num+1):
+#     tmp_list.append(i)
+#     if i%num==0:
+#         main_list.append(tmp_list)
+#         tmp_list=[]
+# print(main_list)
+#q6
+# א
+metrix=[[1,2,3,5],[12,13,14,15],[11,12,19,61],[18,61,12,22]]
+list_7=[]
+list_6=[]
+list_8=[]
+dict_1={}
+the_most_number=0
+num=0
+for i,x in enumerate(metrix):
+    for a,b in enumerate(x):
+        list_7.append(b)
+        if b not in dict_1.keys():
+            dict_1[b]=1
+        elif b in dict_1.keys():
+            dict_1[b]+=1
+        if a%2==0:
+            list_6.append(b)
+    list_8.append(list_6)
+    list_6=[]
+print(list_8)
+#ב
+print(sum(list_7))
+#ג
+for k,v in dict_1.items():
+    if v>the_most_number:
+        the_most_number=v
+        num=k
+print (num,"is the number that we have the most",the_most_number)
