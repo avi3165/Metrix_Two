@@ -137,30 +137,78 @@
 # for i in range(len(new_matrix)):
 #     print(new_matrix[i])
 #q7*
-#עשינו את הקוד כך שיתאים לכל אורך מטריצה
+# #עשינו את הקוד כך שיתאים לכל אורך מטריצה
+# matrix=[[1,2,3,4,5],
+#         [6,7,8,9,10],
+#         [11,12,13,14,15],
+#         [16,17,18,19,20],
+#         [21,22,23,24,25]]
+# num=int(input("Please enter a number: "))
+# for i,v in enumerate(matrix):
+#     for a,b in enumerate(v):
+#         if num==b and a!=0 and a!=len(matrix)-1:
+#             if i!=0:
+#                 print(matrix[i-1][a-1],matrix[i-1][a],matrix[i-1][a+1])
+#             print(matrix[i][a- 1],"  ", matrix[i][a+1])
+#             if i!=len(matrix)-1:
+#                 print(matrix[i+1][a- 1], matrix[i+1][a], matrix[i+1][a+ 1])
+#         elif num==b and a!=0:
+#             if i!=0:
+#                 print(matrix[i-1][a-1],matrix[i-1][a])
+#             print(matrix[i][a- 1],"  ")
+#             if i!=len(matrix)-1:
+#                 print(matrix[i+1][a- 1], matrix[i+1][a])
+#         elif num==b and a!=len(matrix)-1:
+#             if i!=0:
+#                 print(matrix[i-1][a],matrix[i-1][a+1])
+#             print("  ", matrix[i][a+1])
+#             if i!=len(matrix)-1:
+#                 print( matrix[i+1][a], matrix[i+1][a+ 1])
+#q8**
 matrix=[[1,2,3,4,5],
         [6,7,8,9,10],
         [11,12,13,14,15],
         [16,17,18,19,20],
         [21,22,23,24,25]]
-num=int(input("Please enter a number: "))
-for i,v in enumerate(matrix):
-    for a,b in enumerate(v):
-        if num==b and a!=0 and a!=len(matrix)-1:
-            if i!=0:
-                print(matrix[i-1][a-1],matrix[i-1][a],matrix[i-1][a+1])
-            print(matrix[i][a- 1],"  ", matrix[i][a+1])
-            if i!=len(matrix)-1:
-                print(matrix[i+1][a- 1], matrix[i+1][a], matrix[i+1][a+ 1])
-        elif num==b and a!=0:
-            if i!=0:
-                print(matrix[i-1][a-1],matrix[i-1][a])
-            print(matrix[i][a- 1],"  ")
-            if i!=len(matrix)-1:
-                print(matrix[i+1][a- 1], matrix[i+1][a])
-        elif num==b and a!=len(matrix)-1:
-            if i!=0:
-                print(matrix[i-1][a],matrix[i-1][a+1])
-            print("  ", matrix[i][a+1])
-            if i!=len(matrix)-1:
-                print( matrix[i+1][a], matrix[i+1][a+ 1])
+list_1=[]
+list_2=[]
+list_3=[]
+list_4=[]
+list_5=[]
+small_matrix=[]
+num=input("Please enter numbers, if you end with the list press stop.\nAll the lists must have the same length.\nList 1 the 1st:" )
+while num!="stop":
+    num=int(num)
+    list_1.append(num)
+    num=input("number: ")
+if sum(list_1)>0:
+    small_matrix.append(list_1)
+num=input("Please enter numbers, if you end with this list press stop.\nList 2 the 1st:" )
+while num!="stop":
+    num = int(num)
+    list_2.append(num)
+    num =input("number: ")
+if sum(list_2)>0:
+    small_matrix.append(list_2)
+num=input("Please enter numbers, if you end with this list press stop.\nList 3 the 1st:" )
+while num!="stop":
+    num = int(num)
+    list_3.append(num)
+    num =input("number: ")
+if sum(list_3)>0:
+    small_matrix.append(list_3)
+num=input("Please enter numbers, if you end with this list press stop.\nList 4 the 1st:" )
+while num!="stop":
+    num = int(num)
+    list_4.append(num)
+    num =input("number: ")
+if sum(list_4)>0:
+    small_matrix.append(list_4)
+num=input("Please enter numbers, if you end with this list press stop.\nList 5 the 1st:" )
+while num!="stop":
+    num = int(num)
+    list_5.append(num)
+    num = input("number: ")
+if sum(list_5)>0:
+    small_matrix.append(list_5)
+print(small_matrix)
