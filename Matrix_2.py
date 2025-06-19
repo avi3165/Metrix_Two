@@ -75,33 +75,64 @@
 #         num=k
 # print (num,"is the number that we have the most",the_most_number)
 #q7
-metrix=[[1,2,3,4,5],
+# metrix=[[1,2,3,4,5],
+#         [6,7,8,9,10],
+#         [11,12,13,14,15],
+#         [16,17,18,19,20],
+#         [21,22,23,24,25]]
+# a=1
+# #א
+# first_slant,second_slant=[],[]
+# first_column,last_column=[],[]
+# frame=0
+#
+# for i,v in enumerate(metrix):
+#     first_slant.append(v[i])
+#     second_slant.append(v[-a])
+#     a+=1
+#     first_column.append(v[0])
+#     last_column.append(v[-1])
+#     if i==0:
+#         frame+=sum(v)
+#     elif i==len(metrix)-1:
+#         frame+=sum(v)
+#     else:
+#         frame+=v[0]+v[-1]
+# print("The sum of the first slant is",sum(first_slant))
+# print("The sum of the second slant is",sum(second_slant))
+# #ב
+# print("The sum of the first column is",sum(first_column))
+# print("The sum of the last column is",sum(last_column))
+# #ג
+# print("The sum of the matrix frame is",frame)
+#q8
+matrix=[[1,2,3,4,5],
         [6,7,8,9,10],
         [11,12,13,14,15],
         [16,17,18,19,20],
         [21,22,23,24,25]]
-a=1
+maximum=matrix[0]
+max_index=0
+minimum=matrix[0]
+min_index=0
 #א
-first_slant,second_slant=[],[]
-first_column,last_column=[],[]
-frame=0
-
-for i,v in enumerate(metrix):
-    first_slant.append(v[i])
-    second_slant.append(v[-a])
-    a+=1
-    first_column.append(v[0])
-    last_column.append(v[-1])
-    if i==0:
-        frame+=sum(v)
-    elif i==len(metrix)-1:
-        frame+=sum(v)
-    else:
-        frame+=v[0]+v[-1]
-print("The sum of the first slant is",sum(first_slant))
-print("The sum of the second slant is",sum(second_slant))
+for i,v in enumerate(matrix):
+    if sum(v)>sum(maximum):
+        maximum=v
+        max_index=i
+    elif sum(v)<sum(minimum):
+        minimum=v
+        min_index=i
+print("The index with the max value is",max_index)
 #ב
-print("The sum of the first column is",sum(first_column))
-print("The sum of the last column is",sum(last_column))
-#ג
-print("The sum of the matrix frame is",frame)
+print("The index with the min value is",min_index)
+# ג
+new_matrix=[]
+for a in range(len(matrix)):
+    new_matrix.append([])
+for i,v in enumerate(matrix):
+    for j in range(1,len(matrix)+1):
+        new_matrix[i].append(matrix[-j][i])
+print(matrix)
+for i in range(len(new_matrix)):
+    print(new_matrix[i])
