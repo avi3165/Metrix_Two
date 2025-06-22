@@ -174,7 +174,7 @@ matrix=[[1,2,3,4,5],
         [21,22,23,24,25]]
 d=0
 i=1
-small_matrix=[[3,4,5],[8,9,10],[13,14,15]]
+small_matrix=[[3,4,5],[8,6,10],[13,14,15]]
 for a in matrix:
     if i>=3:
         break
@@ -182,4 +182,6 @@ for a in matrix:
         i+=1
         d+=1
 if i==3:
-    print("yes")
+    print("Yes")
+elif i<3:
+    print("No")
